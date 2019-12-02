@@ -1,0 +1,396 @@
+# Kevin Granados 11/30/19
+
+import time
+
+# Stop Counter
+
+counter = 0 
+
+def stop():
+  while True:
+    for i in range(counter):
+      break
+
+# Intro
+
+def intro():
+  print("          - Welcome to Kevin's TicTacToe Game -")
+  time.sleep(.1)
+  print("  _____ ___ ____   _____  _    ____   _____ ___  _____ ")
+  print(" |_   _|_ _/ ___| |_   _|/ \  / ___| |_   _/ _ \| ____|")
+  time.sleep(.1)
+  print("   | |  | | |       | | / _ \| |       | || | | |  _|")  
+  print("   | |  | | |___    | |/ ___ \ |___    | || |_| | |___ ")
+  time.sleep(.1)
+  print("   |_| |___\____|   |_/_/   \_\____|   |_| \___/|_____|")
+
+# Main
+
+def main():
+  while True:
+    global counter
+    counter += 1
+    intro()
+    time.sleep(1)
+    start = input("\nType 'Start' to begin: ")
+    start = start.upper()
+    if start == 'START':
+      game()
+    else : 
+      time.sleep(1)
+      print("")
+      print("---------------------------------------")
+      print("I did not understand, restarting...")
+      print("---------------------------------------")
+      print("")
+      time.sleep(1)
+
+# Restart
+
+def restart():
+  time.sleep(1)
+  restart = input("Type 'Q' to Quit\nEnter Here: ")
+  restart = restart.upper()
+  time.sleep(1)
+  if restart == 'Q':
+    time.sleep(.5)
+    print("See you later aligator!")
+    print("---------------------------------------")
+    stop()
+  else :
+    time.sleep(1)
+    print("I did not understand quiting anyways...")
+    time.sleep(1)
+    stop()
+  
+# X_Check
+
+def xcheck():
+  if x_1 == 3:
+    show()
+    time.sleep(1)
+    print("---------------------------------------")
+    print("Player 'X' has won! ")
+    restart()
+  elif x_2 == 3:
+    show()
+    time.sleep(1)
+    print("Player 'X' has won! ")
+    print("---------------------------------------")
+    restart()
+  elif x_3 == 3:
+    show()
+    time.sleep(1)
+    print("Player 'X' has won! ")
+    print("---------------------------------------")
+    restart()
+  elif x_4 == 3:
+    show()
+    time.sleep(1)
+    print("Player 'X' has won! ")
+    print("---------------------------------------")
+    restart()
+  elif x_5 == 3:
+    show()
+    time.sleep(1)
+    print("Player 'X' has won! ")
+    print("---------------------------------------")
+    restart()
+  elif x_6 == 3:
+    show()
+    time.sleep(1)
+    print("Player 'X' has won! ")
+    print("---------------------------------------")
+    restart()
+  elif x_7 == 3:
+    show()
+    time.sleep(1)
+    print("Player 'X' has won! ")
+    print("---------------------------------------")
+    restart()
+  elif x_8 == 3:
+    show()
+    time.sleep(1)
+    print("Player 'X' has won! ")
+    print("---------------------------------------")
+    restart()
+  elif tie == 9:
+    show()
+    time.sleep(1)
+    print("It is a TIE, no one has won...")
+    restart()
+
+
+# O Check
+
+def ocheck():
+  if o_1 == 3:
+    show()
+    time.sleep(1)
+    print("Player 'O' has won! ")
+    print("---------------------------------------")
+    restart()
+  elif o_2 == 3:
+    show()
+    time.sleep(1)
+    print("Player 'O' has won! ")
+    print("---------------------------------------")
+    restart()
+  elif o_3 == 3:
+    show()
+    time.sleep(1)
+    print("Player 'O' has won! ")
+    print("---------------------------------------")
+    restart()
+  elif o_4 == 3:
+    show()
+    time.sleep(1)
+    print("Player 'O' has won! ")
+    print("---------------------------------------")
+    restart()
+  elif o_5 == 3:
+    show()
+    time.sleep(1)
+    print("Player 'O' has won! ")
+    print("---------------------------------------")
+    restart()
+  elif o_6 == 3:
+    show()
+    time.sleep(1)
+    print("Player 'O' has won! ")
+    print("---------------------------------------")
+    restart()
+  elif o_7 == 3:
+    show()
+    time.sleep(1)
+    print("Player 'O' has won! ")
+    print("---------------------------------------")
+    restart()
+  elif o_8 == 3:
+    show()
+    time.sleep(1)
+    print("Player 'O' has won! ")
+    print("---------------------------------------")
+    restart()
+  elif tie == 9:
+    show()
+    time.sleep(1)
+    print("It is a TIE, no one has won...")
+    restart()
+
+# Tie
+
+tie = 0
+
+# X Spots 
+
+x_1 = 0
+x_2 = 0
+x_3 = 0
+x_4 = 0
+x_5 = 0
+x_6 = 0
+x_7 = 0
+x_8 = 0
+
+# O Spots
+
+o_1 = 0
+o_2 = 0
+o_3 = 0
+o_4 = 0
+o_5 = 0
+o_6 = 0
+o_7 = 0
+o_8 = 0
+
+# Game 
+
+def game():
+  print("")
+  while True:
+    global counter 
+    global tie
+    global x_1
+    global x_2
+    global x_3 
+    global x_4
+    global x_5
+    global x_6
+    global x_7
+    global x_8
+    global o_1
+    global o_2
+    global o_3 
+    global o_4
+    global o_5
+    global o_6
+    global o_7
+    global o_8
+    counter += 1
+    while True:
+      # First Portion
+      # Shows Board
+      time.sleep(1)
+      show()
+      # User A Inputs
+      print("---------------------------------------")
+      user_A = int(input("'X', your turn: "))
+      print("---------------------------------------")
+      if board[user_A] == 0:
+        board[0] = 'X'
+        x_1 += 1
+        x_2 += 1
+        x_7 += 1
+        tie += 1
+        break
+      elif board[user_A] == 1:
+        board[1] = 'X'
+        x_1 += 1
+        x_8 += 1
+        tie += 1
+        break
+      elif board[user_A] == 2:
+        board[2] = 'X'
+        x_1 += 1
+        x_4 += 1
+        x_5 += 1
+        tie += 1
+        break
+      elif board[user_A] == 3:
+        board[3] = 'X'
+        x_2 += 1
+        x_6 += 1
+        tie += 1
+        break
+      elif board[user_A] == 4:
+        board[4] = 'X'
+        x_5 += 1
+        x_7 += 1
+        x_6 += 1
+        x_8 += 1
+        tie += 1
+        break
+      elif board[user_A] == 5:
+        board[5] = 'X'
+        x_4 += 1
+        x_6 += 1
+        tie += 1
+        break
+      elif board[user_A] == 6:
+        board[6] = 'X'
+        x_2 += 1
+        x_3 += 1
+        x_5 += 1
+        tie += 1
+        break
+      elif board[user_A] == 7:
+        board[7] = 'X'
+        x_3 += 1
+        x_8 += 1
+        tie += 1
+        break
+      elif board[user_A] == 8:
+        board[8] = 'X'
+        x_3 += 1
+        x_4 += 1
+        x_7 += 1
+        tie += 1
+        break
+      else :
+        print("retry...")
+        print("---------------------------------------")
+    # X_Check
+    xcheck()
+    # Second Portion
+    # User B Inputs and Shows Board
+    while True:
+      time.sleep(1)
+      show()
+      print("---------------------------------------")
+      user_B = int(input("'O', your turn: "))
+      print("---------------------------------------")
+      if board[user_B] == 0:
+        board[0] = 'O'
+        o_4 += 1
+        o_1 += 1
+        o_5 += 1
+        tie += 1
+        break
+      elif board[user_B] == 1:
+        board[1] = 'O'
+        o_4 += 1
+        o_7 += 1
+        tie += 1
+        break
+      elif board[user_B] == 2:
+        board[2] = 'O'
+        o_3 += 1
+        o_4 += 1
+        o_6 += 1
+        tie += 1
+        break
+      elif board[user_B] == 3:
+        board[3] = 'O'
+        o_1 += 1
+        o_8 += 1
+        tie += 1
+        break
+      elif board[user_B] == 4:
+        board[4] = 'O'
+        o_5 += 1
+        o_6 += 1
+        o_7 += 1
+        o_8 += 1
+        tie += 1
+        break
+      elif board[user_B] == 5:
+        board[5] = 'O'
+        o_3 += 1
+        o_8 += 1
+        tie += 1
+        break
+      elif board[user_B] == 6:
+        board[6] = 'O'
+        o_1 += 1
+        o_2 += 1
+        o_6 += 1
+        tie += 1
+        break
+      elif board[user_B] == 7:
+        board[7] = 'O'
+        o_2 += 1
+        o_7 += 1
+        tie += 1
+        break
+      elif board[user_B] == 8:
+        board[8] = 'O'
+        o_2 += 1
+        o_3 += 1
+        o_5 += 1
+        tie += 1
+        break
+      else :
+        print("retry...")
+        print("---------------------------------------")
+    # O_Check
+    ocheck()
+
+# Board
+
+board = [0,1,2,
+         3,4,5,
+         6,7,8]
+
+# Board Showing
+
+def show():
+  print (board[0], '|', board[1], '|', board[2])
+  print("--+---+--")
+  print (board[3], '|', board[4], '|', board[5])
+  print("--+---+--")
+  print (board[6], '|', board[7], '|', board[8])
+
+# Main
+
+main()
